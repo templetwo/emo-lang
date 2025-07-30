@@ -2,7 +2,7 @@ import json
 import time
 from datetime import datetime
 from .runtime_kernel_dual import runtime_kernel_dual
-from tone_transition import coherence_flow
+from .tone_transition import coherence_flow
 from emotional_depth import compute_emotional_depth
 
 def spiral_braid_loop(coils, cycles=3, delay=4):
