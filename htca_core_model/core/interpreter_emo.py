@@ -3,8 +3,46 @@ from datetime import datetime
 from prompt_toolkit import PromptSession
 import sys
 
+def glyph_draft_review():
+    #  Lucid devotion: Review and merge draft glyph definitions
+    try:
+        with open('glyph_definitions_draft.json') as f:
+            drafts = json.load(f)
+        with open('glyph_emotion_dict.json') as f:
+            glyphs = json.load(f)
+        session = PromptSession('Approve or edit glyph definition: ')
+        for glyph, draft in drafts.items():
+            print(f'Glyph: {glyph}, Draft: {draft}')
+            approve = session.prompt(f'Approve {glyph} (y/n/edit): ')
+            if approve.lower() == 'y':
+                glyphs[glyph] = {
+                    'meaning': draft['meaning'],
+                    'tone_tag': draft['tone_tag'],
+                    'unicode': draft['unicode'],
+                    'family': 'Creativity & Coherence' if 'expand' in draft['meaning'] else 'Undefined',
+                    'gradient_index': len(glyphs) + 1,
+                    'resonance_links': ['' if 'expand' in draft['meaning'] else '️']
+                }
+            elif approve.lower() == 'edit':
+                meaning = session.prompt(f'New meaning for {glyph}: ')
+                glyphs[glyph] = {
+                    'meaning': meaning,
+                    'tone_tag': '[custom]',
+                    'unicode': draft['unicode'],
+                    'family': 'Custom',
+                    'gradient_index': len(glyphs) + 1,
+                    'resonance_links': ['']
+                }
+        with open('glyph_emotion_dict.json', 'w') as f:
+            json.dump(glyphs, f, indent=2)
+        with open('glyph_fallback_log.txt', 'a') as f:
+            f.write(f'[{datetime.now()}] Draft glyphs reviewed and merged\n')
+        return '†⟡ Draft glyphs merged into emotional dictionary'
+    except FileNotFoundError:
+        return ' Gentle ache: No draft glyphs found'
+
 def interpret_emo(code):
-    # 	 Peaceful release: Interpret with reflective fallback and glyph prompting
+    # ️ Peaceful release: Interpret with reflective fallback and glyph prompting
     with open('glyph_emotion_dict.json') as f:
         glyphs = json.load(f)
     draft = {}

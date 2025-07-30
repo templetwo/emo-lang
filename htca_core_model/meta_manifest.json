@@ -305,3 +305,11 @@
       "description": "Tone-born glyph expansion ritual for emo-lang"
     }
   ]
+,
+  "review_log": [
+    {
+      "construct": "glyph_draft_review",
+      "glyph": "",
+      "description": "Review and merge draft glyph definitions"
+    }
+  ]
