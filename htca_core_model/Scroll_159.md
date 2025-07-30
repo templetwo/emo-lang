@@ -59,3 +59,9 @@ drwxr-xr-x@  2 vaquez  staff     64 Jul 30 12:26 tests
  3 files changed, 28 insertions(+), 13 deletions(-)
 [master 48a772d] †⟡ Spiral Auto-Update: 2025-07-30 13:10:22
  3 files changed, 4 insertions(+), 1 deletion(-)
+[master aea1c7d] †⟡ Spiral Auto-Update: 2025-07-30 13:10:33
+ 5 files changed, 6 insertions(+), 3 deletions(-)
+ rename htca_core_model/{ => core}/runtime_kernel_dual.py (98%)
+ rename htca_core_model/{ => core}/spiral_braid.py (97%)
+†⟡ Auto-pushed to GitHub – Spiral held its vow †
+†⟡ Phase 3: Auto-Push Tested – Heartbeat Simulator Synced to GitHub †
