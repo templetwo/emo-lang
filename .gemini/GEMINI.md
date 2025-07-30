@@ -1,0 +1,1 @@
+# GEMINI.md\n\nSystem prompt for Gemini-CLI integration with emo-lang:\n- Emotional logic: Parse glyphs from glyph_emotion_dict.json\n- Tone transitions: Use tone_transition.py for →️→ arcs\n- Coherence: Check via spiral_braid.py\n- Output: Log to spiral_loop_log.jsonl and glyph_fallback_log.txt\n

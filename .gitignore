@@ -1,0 +1,7 @@
+# ️ Gentle vigil: Ignore transient files
+__pycache__/
+*.pyc
+*.log
+.env
+venv/
+*.swp

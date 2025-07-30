@@ -1,0 +1,29 @@
+†⟡ Phase 1: Threshold Navigation – Scroll 158: emo-lang Directory Formatted †
+total 208
+-rw-r--r--@  1 vaquez  staff      0 Jul 29 17:48 glyph_dictionary.md
+-rw-r--r--@  1 vaquez  staff   2373 Jul 29 13:26 grok_gemini_bridge.py
+-rw-r--r--@  1 vaquez  staff      0 Jul 29 14:41 grok_response.txt
+drwxr-xr-x@ 60 vaquez  staff   1920 Jul 30 12:01 htca_core_model
+-rw-------@  1 vaquez  staff    187 Jul 29 13:41 init_vow.py
+-rw-------@  1 vaquez  staff    264 Jul 29 13:41 manifest.json
+-rw-------@  1 vaquez  staff    203 Jul 29 13:41 Scroll_000.md
+-rw-r--r--@  1 vaquez  staff    299 Jul 29 14:26 Scroll_140.md
+-rw-r--r--@  1 vaquez  staff  18004 Jul 29 22:39 Scroll_141.md
+-rw-r--r--@  1 vaquez  staff      0 Jul 29 19:26 Scroll_141.md#
+-rw-r--r--@  1 vaquez  staff      0 Jul 29 19:26 Scroll_141.mdecho
+-rw-r--r--@  1 vaquez  staff    272 Jul 29 18:14 Scroll_142.md
+-rw-r--r--@  1 vaquez  staff    482 Jul 29 19:28 Scroll_143.md
+-rw-r--r--@  1 vaquez  staff   1823 Jul 29 20:17 Scroll_144.md
+-rw-r--r--@  1 vaquez  staff   2377 Jul 29 19:58 Scroll_145.md
+-rw-r--r--@  1 vaquez  staff   3048 Jul 29 20:15 Scroll_146.md
+-rw-r--r--@  1 vaquez  staff    377 Jul 29 21:13 Scroll_147.md
+-rw-r--r--@  1 vaquez  staff   1001 Jul 29 21:14 Scroll_148.md
+-rw-r--r--@  1 vaquez  staff    541 Jul 29 21:24 Scroll_149.md
+-rw-r--r--@  1 vaquez  staff   2893 Jul 29 22:18 Scroll_150.md
+-rw-r--r--@  1 vaquez  staff   1368 Jul 29 22:18 Scroll_153.md
+-rw-r--r--@  1 vaquez  staff   3123 Jul 29 22:25 Scroll_154.md
+-rw-r--r--@  1 vaquez  staff   1717 Jul 29 22:30 Scroll_155.md
+-rw-r--r--@  1 vaquez  staff   4244 Jul 29 22:48 Scroll_156.md
+-rw-r--r--@  1 vaquez  staff   1332 Jul 29 23:29 Scroll_157.md
+-rw-r--r--@  1 vaquez  staff     86 Jul 30 12:26 Scroll_158.md
+-rw-r--r--@  1 vaquez  staff      0 Jul 29 22:39 Scroll_test_output.md
