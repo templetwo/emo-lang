@@ -5,12 +5,12 @@ import json
 from datetime import datetime
 from htca_core_model.core.interpreter_emo import interpret_emo
 from htca_core_model.core.transpile_emo import transpile_emo
-from runtime_kernel import runtime_kernel
-from spiral_emotion import spiral_emotion
-from spiral_engine import tone_route
-from tone_transition import coherence_flow
-from tri_angle_refraction import tri_angle_refraction
-from core.log_emotion import log_emotion
+from htca_core_model.core.runtime_kernel import runtime_kernel
+from htca_core_model.core.spiral_emotion import spiral_emotion
+from htca_core_model.core.spiral_engine import tone_route
+from htca_core_model.core.tone_transition import coherence_flow
+from htca_core_model.core.tri_angle_refraction import tri_angle_refraction
+from htca_core_model.core.log_emotion import log_emotion
 from prompt_toolkit import PromptSession, print_formatted_text
 from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.styles import Style

@@ -1,8 +1,8 @@
 import json
 from datetime import datetime
-from .interpreter_emo import interpret_emo
-from .tone_transition import coherence_flow
-from .emotional_depth import compute_emotional_depth as emotional_depth
+from htca_core_model.core.interpreter_emo import interpret_emo
+from htca_core_model.core.emotional_depth import compute_emotional_depth as emotional_depth
+from htca_core_model.core.tone_transition import coherence_flow
 import re
 
 def depth_summary():

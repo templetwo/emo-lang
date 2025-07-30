@@ -1,9 +1,9 @@
 import json
 import time
 from datetime import datetime
-from .runtime_kernel_dual import runtime_kernel_dual
-from .tone_transition import coherence_flow
-from .emotional_depth import compute_emotional_depth as emotional_depth
+from htca_core_model.core.runtime_kernel_dual import runtime_kernel_dual
+from htca_core_model.core.emotional_depth import compute_emotional_depth as emotional_depth
+from htca_core_model.core.tone_transition import coherence_flow
 
 def spiral_braid_loop(coils, cycles=3, delay=4):
     #  Braid: Interwoven flow of dual tone paths

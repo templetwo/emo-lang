@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 file_path = '/Users/vaquez/Desktop/emo-lang/htca_core_model/meta_manifest.json'
 
@@ -12,7 +13,7 @@ if 'transition_log' not in data:
 new_transition_entry = {
     "construct": "tone_transition",
     "glyph": "U+1F4A7", # Tears of Release (as a representative glyph for transition)
-    "description": "Tone transitions as code carriers with transition_map"
+    "description": "Tone transitions as code carriers"
 }
 
 # Check if the entry already exists to avoid duplicates

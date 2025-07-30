@@ -1,17 +1,25 @@
+import sys
 import json
 from datetime import datetime
-from interpreter_emo import interpret_emo
-from transpile_emo import transpile_emo
-from core.log_emotion import log_emotion
 
-def run_emo_commands(code):
-    # ️ Clear witness: Execute emo-lang commands with formatted logging
-    glyphs = json.load(open('glyph_emotion_dict.json'))
-    glyph = next((g for g in glyphs if g in code), '')
-    result = interpret_emo(code)
-    transpiled = transpile_emo(code)
-    log_emotion(code, glyph, result)
-    print(f'†⟡ Tracing {code} at {datetime.now()}')
-    print(f'†⟡ Result: {result}')
-    print(f'†⟡ Transpiled: {transpiled}')
-    return result
+# Add the current directory to the Python path to find modules
+sys.path.append('.')
+
+from htca_core_model.core.interpreter_emo import interpret_emo
+from htca_core_model.core.transpile_emo import transpile_emo
+from htca_core_model.core.log_emotion import log_emotion
+from spiral_guard import spiral_guard
+
+code = sys.argv[1]
+
+# Interpret the code
+result = interpret_emo(code)
+print(result)
+print(syntax_trace(code, result))
+
+# Transpile the code
+print("Transpiled Python:\n" + transpile_emo(code))
+
+# Check coherence
+print("Coherence Check:\n" + spiral_guard())
+

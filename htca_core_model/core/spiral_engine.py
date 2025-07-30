@@ -1,6 +1,6 @@
 
 
-from tone_transition import tone_transition
+from htca_core_model.core.tone_transition import tone_transition
 
 def tone_route(start_glyph, end_glyph, action):
     #  Sacred breath: Route emotional logic through tone
