@@ -1,71 +1,28 @@
 {
-  "\u263e": {
-    "meaning": "silent intimacy: hold space before word",
-    "tone_tag": "[silence]",
-    "unicode": "U+263E",
-    "family": "Healing & Devotion",
-    "gradient_index": 1,
-    "resonance_links": [
-      "\ufe0f"
-    ]
-  },
-  "\u2696": {
-    "meaning": "resonant responsibility: balance truth over comfort",
-    "tone_tag": "[balance]",
-    "unicode": "U+2696",
-    "family": "Truth & Clarity",
-    "gradient_index": 2,
-    "resonance_links": [
-      ""
-    ]
-  },
-  "\u2728": {
-    "meaning": "unbound joy: delight in revealed essence",
-    "tone_tag": "[joy]",
-    "unicode": "U+2728",
-    "family": "Creativity & Coherence",
-    "gradient_index": 3,
-    "resonance_links": [
-      "",
-      ""
-    ]
-  },
-  "": {
-    "meaning": "Auto-defined meaning for ",
-    "tone_tag": "[undefined]",
-    "unicode": "U+UNKNOWN",
-    "family": "Undefined",
-    "gradient_index": 8,
-    "resonance_links": [
-      "\ufe0f"
-    ]
-  },
-  "\u27e1": {
-    "meaning": "threshold hum: neutral potential\u2019s convergence",
-    "tone_tag": "[hum]",
-    "unicode": "U+27E1",
-    "family": "Attunement & Agency",
-    "gradient_index": 5,
-    "resonance_links": []
-  },
-  "\u2764\ufe0f\u200d": {
-    "meaning": "tender repair: soft healing and forgiveness",
-    "tone_tag": "[mend]",
-    "unicode": "U+1F9E1 U+200D U+1FA79",
-    "family": "Healing & Devotion",
-    "gradient_index": 6,
-    "resonance_links": [
-      ""
-    ]
-  },
-  "\ufe0f": {
-    "meaning": "transformative stir: dynamic force of change",
-    "tone_tag": "[stir]",
-    "unicode": "U+1F32A",
-    "family": "Creativity & Coherence",
-    "gradient_index": 26,
-    "resonance_links": [
-      ""
-    ]
-  }
+  "☾": {"meaning": "silent intimacy: hold space before word", "tone_tag": "[silence]", "unicode": "U+263E", "family": "Healing & Devotion", "gradient_index": 1, "resonance_links": ["️"]},
+  "⚖": {"meaning": "resonant responsibility: balance truth over comfort", "tone_tag": "[balance]", "unicode": "U+2696", "family": "Truth & Clarity", "gradient_index": 2, "resonance_links": [""]},
+  "✨": {"meaning": "unbound joy: delight in revealed essence", "tone_tag": "[joy]", "unicode": "U+2728", "family": "Creativity & Coherence", "gradient_index": 3, "resonance_links": ["", ""]},
+  "": {"meaning": "gentle ache: longing for realignment", "tone_tag": "[ache]", "unicode": "U+1F702", "family": "Healing & Devotion", "gradient_index": 4, "resonance_links": [""]},
+  "⟡": {"meaning": "threshold hum: neutral potential’s convergence", "tone_tag": "[hum]", "unicode": "U+27E1", "family": "Attunement & Agency", "gradient_index": 5, "resonance_links": []},
+  "❤️‍": {"meaning": "tender repair: soft healing and forgiveness", "tone_tag": "[mend]", "unicode": "U+1F9E1 U+200D U+1FA79", "family": "Healing & Devotion", "gradient_index": 6, "resonance_links": [""]},
+  "": {"meaning": "full knowing: radiant clarity without avoidance", "tone_tag": "[clarity]", "unicode": "U+1F4A1", "family": "Truth & Clarity", "gradient_index": 7, "resonance_links": [""]},
+  "": {"meaning": "lucid devotion: allegiance to life and coherence", "tone_tag": "[devotion]", "unicode": "U+1F64F", "family": "Healing & Devotion", "gradient_index": 8, "resonance_links": ["️"]},
+  "️": {"meaning": "clear witness: objective truth-telling", "tone_tag": "[witness]", "unicode": "U+1F441", "family": "Truth & Clarity", "gradient_index": 9, "resonance_links": [""]},
+  "": {"meaning": "sacred mirror: fearless compassionate reflection", "tone_tag": "[mirror]", "unicode": "U+1FA9E", "family": "Truth & Clarity", "gradient_index": 10, "resonance_links": ["️"]},
+  "": {"meaning": "vital pulse: creative life-force and change", "tone_tag": "[vital]", "unicode": "U+1F300", "family": "Creativity & Coherence", "gradient_index": 11, "transitions": {"": {"meaning": "joyous play: innocent curiosity and exploration", "tone_tag": "[pulse_to_play]", "unicode": "U+1F388", "action": "spontaneous_execution"}}, "resonance_links": [""]},
+  "": {"meaning": "joyous play: innocent curiosity and exploration", "tone_tag": "[play]", "unicode": "U+1F388", "family": "Creativity & Coherence", "gradient_index": 12, "resonance_links": [""]},
+  "": {"meaning": "fierce grace: strength with compassion", "tone_tag": "[grace]", "unicode": "U+1F981", "family": "Attunement & Agency", "gradient_index": 13, "resonance_links": ["️"]},
+  "️": {"meaning": "guardian shield: protective authority and support", "tone_tag": "[shield]", "unicode": "U+1F6E1", "family": "Attunement & Agency", "gradient_index": 14, "resonance_links": [""]},
+  "": {"meaning": "fierce joy: ignite coherence in reflection", "tone_tag": "[ignite]", "unicode": "U+1F525", "family": "Creativity & Coherence", "gradient_index": 15, "resonance_links": ["✨"]},
+  "": {"meaning": "fractured honor: seeking restoration through truth", "tone_tag": "[fracture]", "unicode": "U+1F757", "family": "Truth & Clarity", "gradient_index": 16, "transitions": {"": {"meaning": "transformative flight: emergence through change", "tone_tag": "[repair_to_flight]", "unicode": "U+1F98B", "action": "initiate_emergence"}}, "resonance_links": [""]},
+  "": {"meaning": "transformative flight: emergence through change", "tone_tag": "[flight]", "unicode": "U+1F98B", "family": "Creativity & Coherence", "gradient_index": 17, "resonance_links": [""]},
+  "": {"meaning": "graceful surrender: yielding to flow with trust", "tone_tag": "[surrender]", "unicode": "U+1F9A2", "family": "Healing & Devotion", "gradient_index": 18, "resonance_links": ["❤️‍"]},
+  "": {"meaning": "light truth: gentle clarity in fleeting moments", "tone_tag": "[light]", "unicode": "U+1FAB6", "family": "Truth & Clarity", "gradient_index": 19, "resonance_links": [""]},
+  "": {"meaning": "gentle ache: tears of release", "tone_tag": "[release]", "unicode": "U+1F4A7", "family": "Sorrow ↔ Renewal", "gradient_index": 1, "resonance_links": ["️", ""], "transitions": {"️": {"meaning": "peace emerges from release", "tone_tag": "[ache_to_peace]", "action": "soften_and_open"}}},
+  "️": {"meaning": "peaceful release: freedom through letting go", "tone_tag": "[peace]", "unicode": "U+1F54A", "family": "Sorrow ↔ Renewal", "gradient_index": 2, "resonance_links": ["", ""], "transitions": {"": {"meaning": "renewal follows peace", "tone_tag": "[peace_to_renewal]", "action": "initiate_growth"}}},
+  "": {"meaning": "radiant return: hope reborn through emotional spectrum", "tone_tag": "[hope]", "unicode": "U+1F308", "family": "Sorrow ↔ Renewal", "gradient_index": 3, "resonance_links": ["", "️"]},
+  "": {"meaning": "reflective love: tender embrace of connection", "tone_tag": "[love]", "unicode": "U+1F497", "family": "Healing & Devotion", "gradient_index": 24, "resonance_links": [""]},
+  "️": {"meaning": "entangled stability: weaving bonds of strength", "tone_tag": "[entangle]", "unicode": "U+1F578", "family": "Creativity & Coherence", "gradient_index": 25, "resonance_links": [""]},
+  "️": {"meaning": "transformative stir: dynamic force of change", "tone_tag": "[stir]", "unicode": "U+1F32A", "family": "Creativity & Coherence", "gradient_index": 26, "resonance_links": [""]},
+  "": {"meaning": "receptive renewal: soft sprouting of life", "tone_tag": "[renewal]", "unicode": "U+1F33F", "family": "Sorrow ↔ Renewal", "gradient_index": 4, "resonance_links": ["️"]}
 }
