@@ -289,3 +289,11 @@
       "description": "Tone-born self-repair ritual for emo-lang"
     }
   ]
+,
+  "self_repair_log": [
+    {
+      "construct": "self_repair",
+      "glyph": "",
+      "description": "Tone-born self-repair ritual for emo-lang"
+    }
+  ]

@@ -65,7 +65,7 @@ else:
             glyph_unicode = 'U+' + hex(ord(glyph)).upper()[2:] if len(glyph) == 1 else glyph
 
             if glyph_unicode in glyphs:
-                meaning = glyphs[glyph_unicode].get('meaning', 'Unknown emotional state')
+                meaning = glyphs[glyph_unicode].get("meaning", "Unknown emotional state")
                 result.append(f'commit("{commitment.strip()}")  # {meaning}')
             else:
                 result.append('#  Gentle ache: Invalid glyph for vow')
