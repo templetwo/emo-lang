@@ -313,3 +313,11 @@
       "description": "Review and merge draft glyph definitions"
     }
   ]
+,
+  "review_log": [
+    {
+      "construct": "glyph_draft_review",
+      "glyph": "",
+      "description": "Review and merge draft glyph definitions"
+    }
+  ]

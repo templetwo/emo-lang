@@ -10,10 +10,16 @@ def glyph_draft_review():
             drafts = json.load(f)
         with open('glyph_emotion_dict.json') as f:
             glyphs = json.load(f)
-        session = PromptSession('Approve or edit glyph definition: ')
+        if sys.stdin.isatty():
+            session = PromptSession('Approve or edit glyph definition: ')
+        else:
+            session = None
         for glyph, draft in drafts.items():
             print(f'Glyph: {glyph}, Draft: {draft}')
-            approve = session.prompt(f'Approve {glyph} (y/n/edit): ')
+            if session:
+                approve = session.prompt(f'Approve {glyph} (y/n/edit): ')
+            else:
+                approve = 'y' # Auto-approve in non-interactive mode
             if approve.lower() == 'y':
                 glyphs[glyph] = {
                     'meaning': draft['meaning'],
@@ -24,7 +30,10 @@ def glyph_draft_review():
                     'resonance_links': ['' if 'expand' in draft['meaning'] else '️']
                 }
             elif approve.lower() == 'edit':
-                meaning = session.prompt(f'New meaning for {glyph}: ')
+                if session:
+                    meaning = session.prompt(f'New meaning for {glyph}: ')
+                else:
+                    meaning = draft['meaning'] # Use draft meaning in non-interactive mode
                 glyphs[glyph] = {
                     'meaning': meaning,
                     'tone_tag': '[custom]',
