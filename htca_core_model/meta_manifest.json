@@ -321,3 +321,19 @@
       "description": "Review and merge draft glyph definitions"
     }
   ]
+,
+  "arc_log": [
+    {
+      "construct": "emotional_arc",
+      "glyph": "",
+      "description": "Restored emotional arc →️→"
+    }
+  ]
+,
+  "visualization_log": [
+    {
+      "construct": "flow_animation",
+      "glyph": "",
+      "description": "Dynamic TUI animations for emotional transitions"
+    }
+  ]

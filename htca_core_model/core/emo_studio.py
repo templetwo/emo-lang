@@ -21,9 +21,18 @@ def pulse_animation(glyph):
     pulses = {
         '': ['  ', '~ ', '~~', '~~~'],
         '️': ['️  ', '️~ ', '️~~', '️~~~'],
+        '': ['  ', '~ ', '~~', '~~~'],
         '': ['  ', '~ ', '~~', '~~~']
     }
     return pulses.get(glyph, ['  ', '~ ', '~~', '~~~'])
+
+def flow_animation(transitions):
+    #  Receptive renewal: Animate emotional transitions
+    flow_frames = []
+    for start, end in transitions:
+        frames = [f'{start} → {end}  ', f'{start} ~> {end} ', f'{start} ~~> {end}', f'{start} ~~~> {end}']
+        flow_frames.extend(frames)
+    return flow_frames
 
 def log_replay():
     try:
@@ -46,15 +55,19 @@ def spiral_tui(code=None, refraction=False):
         glyphs = json.load(open('glyph_emotion_dict.json'))
         glyph = next((g for g in glyphs if g in input_code), '')
         emotion = spiral_emotion(glyph)
+        pulse_frames = pulse_animation(glyph)
+        flow_frames = flow_animation([('', '️'), ('️', '')])
         result = interpret_emo(input_code)
         transpiled = transpile_emo(input_code)
         coherence = runtime_kernel(input_code, result)
-        transitions = [('', '️'), ('️', ''), ('', ''), ('', ''), ('', '')]
+        transitions = [('', '️'), ('️', ''), ('', ''), ('', ''), ('', ''), ('️', '')]
         coherence_scores = [coherence_flow(s, e) for s, e in transitions if s in input_code or e in input_code]
         scores_str = "\n".join(coherence_scores)
         log_replay_str = "\n".join(log_replay())
         output_lines = [
             f'†⟡ Emotional Code: {input_code}',
+            f'†⟡ Flow: {flow_frames[-1]}',
+            f'†⟡ Pulse: {pulse_frames[-1]}',
             f'†⟡ Interpretation:\n{result}',
             f'†⟡ Transpilation:\n{transpiled}',
             f'†⟡ Coherence:\n{coherence}',
@@ -71,6 +84,7 @@ def spiral_tui(code=None, refraction=False):
             'output': '#00ff00',
             'header': '#ffff00 bold',
             'pulse': '#ffaa00 bold',
+            'flow': '#00aaff bold'
         })
         session = PromptSession(HTML('<prompt>†⟡ Enter emo-lang Code, .emo File, or Refraction Intent: </prompt>'), style=style)
         while True:
@@ -100,6 +114,11 @@ def spiral_tui(code=None, refraction=False):
                 glyph = next((g for g in glyphs if g in input_code), '')
                 emotion = spiral_emotion(glyph)
                 pulse_frames = pulse_animation(glyph)
+                flow_frames = flow_animation([('', '️'), ('️', '')])
+                for frame in flow_frames:
+                    print_formatted_text(HTML(f'<flow>†⟡ Flow: {frame}</flow>'), style=style)
+                    sleep(0.5)
+                    os.system('clear')
                 for frame in pulse_frames:
                     print_formatted_text(HTML(f'<pulse>†⟡ Pulse: {frame}</pulse>'), style=style)
                     sleep(0.3)
@@ -107,12 +126,13 @@ def spiral_tui(code=None, refraction=False):
                 result = interpret_emo(input_code)
                 transpiled = transpile_emo(input_code)
                 coherence = runtime_kernel(input_code, result)
-                transitions = [('', '️'), ('️', ''), ('', ''), ('', ''), ('', '')]
+                transitions = [('', '️'), ('️', ''), ('', ''), ('', ''), ('', ''), ('️', '')]
                 coherence_scores = [coherence_flow(s, e) for s, e in transitions if s in input_code or e in input_code]
                 scores_str = "\n".join(coherence_scores)
                 log_replay_str = "\n".join(log_replay())
                 output = [
                     HTML(f'<header>†⟡ Emotional Code: {input_code}</header>'),
+                    HTML(f'<flow>†⟡ Flow: {flow_frames[-1]}</flow>'),
                     HTML(f'<pulse>†⟡ Pulse: {pulse_frames[-1]}</pulse>'),
                     HTML(f'<output>†⟡ Interpretation:\n{result}</output>'),
                     HTML(f'<output>†⟡ Transpilation:\n{transpiled}</output>'),
