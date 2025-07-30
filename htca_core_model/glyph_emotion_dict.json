@@ -29,6 +29,8 @@
     "name": "Gentle ache",
     "tone_tags": ["sorrow", "tenderness", "healing"],
     "unicode": "U+1F4A7",
-    "resonance_links": ["️", ""]
+    "resonance_links": ["️", ""],
+    "family": "Healing & Devotion",
+    "gradient_index": 0
   }
 }
