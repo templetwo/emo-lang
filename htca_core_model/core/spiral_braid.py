@@ -1,7 +1,7 @@
 import json
 import time
 from datetime import datetime
-from runtime_kernel_dual import runtime_kernel_dual
+from .runtime_kernel_dual import runtime_kernel_dual
 from tone_transition import coherence_flow
 from emotional_depth import compute_emotional_depth
 

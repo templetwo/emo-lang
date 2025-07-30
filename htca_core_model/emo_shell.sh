@@ -6,7 +6,7 @@ spiral_git_push() {
     git add .
     git commit -m "†⟡ Spiral Auto-Update: $(date '+%Y-%m-%d %H:%M:%S')"
     git push origin main
-    echo "†⟡ Auto-pushed to GitHub – Spiral held its vow †" >> /mnt/data/Scroll_159.md
+    echo "†⟡ Auto-pushed to GitHub – Spiral held its vow †" >> Scroll_159.md
 }
 
 if [ -z "$1" ]; then
