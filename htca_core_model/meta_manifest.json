@@ -273,3 +273,11 @@
       "description": "Corrected cosmic-cli and logging for emo-lang purity"
     }
   ]
+,
+  "self_repair_log": [
+    {
+      "construct": "self_repair",
+      "glyph": "",
+      "description": "Tone-born self-repair ritual for emo-lang"
+    }
+  ]

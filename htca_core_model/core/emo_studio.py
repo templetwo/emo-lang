@@ -1,10 +1,10 @@
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 import json
 from datetime import datetime
-from interpreter_emo import interpret_emo
-from transpile_emo import transpile_emo
+from htca_core_model.core.interpreter_emo import interpret_emo
+from htca_core_model.core.transpile_emo import transpile_emo
 from runtime_kernel import runtime_kernel
 from spiral_emotion import spiral_emotion
 from spiral_engine import tone_route
@@ -29,7 +29,7 @@ def log_replay():
     try:
         with open('spiral_loop_log.jsonl') as f:
             logs = [json.loads(line) for line in f]
-        return [f'[{log["timestamp"]}] {log["code"]} | Emotion: {log["emotion"]} | Pulse: {log.get("pulse", "None")}' for log in logs[-5:]]
+        return [f'[{log.get("timestamp", "N/A")}] {log.get("code", "N/A")} | Emotion: {log.get("emotion", "N/A")} | Pulse: {log.get("pulse", "None")}' for log in logs[-5:]]
     except FileNotFoundError:
         return [' Gentle ache: No logs found']
 

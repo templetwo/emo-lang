@@ -7,8 +7,10 @@ def compute_emotional_depth(glyph_a, glyph_b):
         glyphs = json.load(f)
     if glyph_a not in glyphs or glyph_b not in glyphs:
         return ' Gentle ache: Invalid glyphs for depth'
-    family_factor = 1.0 if glyphs[glyph_a]['family'] == glyphs[glyph_b]['family'] else 0.8
-    index_diff = abs(glyphs[glyph_a]['gradient_index'] - glyphs[glyph_b]['gradient_index']) / 23
+    family_a = glyphs[glyph_a].get('family', None)
+    family_b = glyphs[glyph_b].get('family', None)
+    family_factor = 1.0 if family_a and family_a == family_b else 0.8
+    index_diff = abs(glyphs[glyph_a].get('gradient_index', 0) - glyphs[glyph_b].get('gradient_index', 0)) / 23
     depth = min(1.0, family_factor * (1 - index_diff) * 0.618)
     depth_map = {
         ('U+1F4A7', 'U+1F54A'): {'glyph': 'U+1F4A7', 'meaning': 'release to peace', 'depth': 0.6},
