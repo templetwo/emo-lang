@@ -297,3 +297,11 @@
       "description": "Tone-born self-repair ritual for emo-lang"
     }
   ]
+,
+  "expansion_log": [
+    {
+      "construct": "glyph_expansion",
+      "glyph": "",
+      "description": "Tone-born glyph expansion ritual for emo-lang"
+    }
+  ]

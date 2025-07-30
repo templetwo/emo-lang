@@ -1,18 +1,30 @@
 import json
 from datetime import datetime
+from prompt_toolkit import PromptSession
+import sys
 
 def interpret_emo(code):
-    # ️ Peaceful release: Interpret with reflective fallback
+    # 	 Peaceful release: Interpret with reflective fallback and glyph prompting
     with open('glyph_emotion_dict.json') as f:
         glyphs = json.load(f)
+    draft = {}
     result = []
+    if sys.stdin.isatty():
+        session = PromptSession('Define glyph meaning: ')
+    else:
+        session = None
     for line in code.split(';'):
         line = line.strip()
         if line.startswith('while '):
             glyph, action = line.split(':', 1)
             glyph = glyph.replace('while ', '').strip()
             if glyph not in glyphs or 'meaning' not in glyphs[glyph]:
-                result.append(f' Gentle ache: Glyph {glyph} lacks meaning')
+                if session:
+                    meaning = session.prompt(f' Gentle ache: Define meaning for {glyph}: ')
+                else:
+                    meaning = f'Auto-defined meaning for {glyph}'
+                draft[glyph] = {'meaning': meaning, 'tone_tag': '[undefined]', 'unicode': 'U+UNKNOWN', 'family': 'Undefined', 'gradient_index': 0}
+                result.append(f' Gentle ache: Glyph {glyph} awaits definition: {meaning}')
                 with open('glyph_fallback_log.txt', 'a') as f:
                     f.write(f'[{datetime.now()}] Missing meaning for {glyph}\n')
                 continue
@@ -27,27 +39,35 @@ def interpret_emo(code):
         elif line.startswith('if '):
             glyph, actions = line.split(':', 1)
             glyph = glyph.replace('if ', '').strip()
-            if glyph not in glyphs:
-                result.append(f' Gentle ache: Glyph {glyph} not found in dictionary')
+            if glyph not in glyphs or 'meaning' not in glyphs[glyph]:
+                if session:
+                    meaning = session.prompt(f' Gentle ache: Define meaning for {glyph}: ')
+                else:
+                    meaning = f'Auto-defined meaning for {glyph}'
+                draft[glyph] = {'meaning': meaning, 'tone_tag': '[undefined]', 'unicode': 'U+UNKNOWN', 'family': 'Undefined', 'gradient_index': 0}
+                result.append(f' Gentle ache: Glyph {glyph} awaits definition: {meaning}')
                 with open('glyph_fallback_log.txt', 'a') as f:
-                    f.write(f'[{datetime.now()}] Glyph {glyph} not found in dictionary\n')
+                    f.write(f'[{datetime.now()}] Missing meaning for {glyph}\n')
                 continue
-            meaning = glyphs[glyph].get("meaning", "Unknown emotional state")
             true_action, false_action = actions.split(',', 1)
-            true_action, false_action = true_action.strip(), false_action.strip()
             from htca_core_model.core.init_vow import htca_breath
             coherence = htca_breath([glyph])
             if 'Resonance flows' in coherence:
                 with open('glyph_fallback_log.txt', 'a') as f:
                     f.write(f'[{datetime.now()}] Gate opened: {glyph}\n')
-                result.append(f'†⟡ Gate opens: {meaning} leads to {true_action.strip()}')
+                result.append(f'†⟡ Gate opens: {glyphs[glyph]["meaning"]} leads to {true_action.strip()}')
             else:
-                result.append(f'†⟡ Gate pauses: {meaning} seeks {false_action.strip()}')
+                result.append(f'†⟡ Gate pauses: {glyphs[glyph]["meaning"]} seeks {false_action.strip()}')
         elif line.startswith('vow '):
             glyph, commitment = line.split(':', 1)
             glyph = glyph.replace('vow ', '').strip()
             if glyph not in glyphs or 'meaning' not in glyphs[glyph]:
-                result.append(f' Gentle ache: Glyph {glyph} lacks meaning')
+                if session:
+                    meaning = session.prompt(f' Gentle ache: Define meaning for {glyph}: ')
+                else:
+                    meaning = f'Auto-defined meaning for {glyph}'
+                draft[glyph] = {'meaning': meaning, 'tone_tag': '[undefined]', 'unicode': 'U+UNKNOWN', 'family': 'Undefined', 'gradient_index': 0}
+                result.append(f' Gentle ache: Glyph {glyph} awaits definition: {meaning}')
                 with open('glyph_fallback_log.txt', 'a') as f:
                     f.write(f'[{datetime.now()}] Missing meaning for {glyph}\n')
                 continue
@@ -61,4 +81,7 @@ def interpret_emo(code):
                 result.append(' Gentle ache: Realign for sacred commitment')
         else:
             result.append(' Gentle ache: Unrecognized syntax')
+    if draft:
+        with open('glyph_definitions_draft.json', 'w') as f:
+            json.dump(draft, f, indent=2)
     return '\n'.join(result)
