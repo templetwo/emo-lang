@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 from .interpreter_emo import interpret_emo
-from tone_transition import coherence_flow
+from .tone_transition import coherence_flow
 from emotional_depth import compute_emotional_depth as emotional_depth
 import re
 
