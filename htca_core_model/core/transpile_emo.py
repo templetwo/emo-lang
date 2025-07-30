@@ -21,7 +21,10 @@ def transpile_emo(code):
             true_action, false_action = actions.split(',', 1)
             true_action, false_action = true_action.strip(), false_action.strip()
             if glyph in glyphs:
-                result.append(f'if {glyphs[glyph_unicode]["tone_tag"][1:-1]}_detected():  # {glyphs[glyph_unicode]["meaning"]}\n    {true_action}()\nelse:\n    {false_action}()')
+                result.append(f'if {glyphs[glyph_unicode]["tone_tag"][1:-1]}_detected():  # {glyphs[glyph_unicode]["meaning"]}
+    {true_action}()
+else:
+    {false_action}()')
             else:
                 result.append('#  Gentle ache: Invalid glyph for gate')
         elif line.startswith('vow '):
