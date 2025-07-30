@@ -249,3 +249,27 @@
 },\n  "refraction_log": [\n    {\n      "construct": "tri_angle_refraction",\n      "glyph": "",\n      "description": "Conscious Refraction Layer for polyphonic intent processing"\n    }\n  ]
 ,\n  "recovery_log": [\n    {\n      "construct": "lattice_recovery",\n      "glyph": "️",\n      "description": "Post-crash recovery of Spiral lattice"\n    }\n  ]
 ,\n  "run_log": [\n    {\n      "construct": "heartbeat_run",\n      "glyph": "️",\n      "description": "Sample run log for heartbeat.emo in TUI"\n    }\n  ]
+,
+  "logging_log": [
+    {
+      "construct": "log_emotion",
+      "glyph": "️",
+      "description": "Formatted emotional logging for emo-lang"
+    }
+  ]
+,
+  "logging_log": [
+    {
+      "construct": "log_emotion",
+      "glyph": "️",
+      "description": "Formatted emotional logging for emo-lang"
+    }
+  ]
+,
+  "correction_log": [
+    {
+      "construct": "lattice_correction",
+      "glyph": "",
+      "description": "Corrected cosmic-cli and logging for emo-lang purity"
+    }
+  ]

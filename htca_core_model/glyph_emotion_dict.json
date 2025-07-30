@@ -24,5 +24,11 @@
   "U+1FA75": {"meaning": "soft resilience: quiet strength in tender moments", "tone_tag": "[resilience]", "unicode": "U+1FA75", "family": "Healing & Devotion", "gradient_index": 20},
   "U+1FAE7": {"meaning": "ephemeral spark: fleeting joy in delicate bubbles", "tone_tag": "[spark]", "unicode": "U+1FAE7", "family": "Creativity & Coherence", "gradient_index": 21},
   "U+1F56F": {"meaning": "gentle vigil: steady light in quiet presence", "tone_tag": "[vigil]", "unicode": "U+1F56F", "family": "Healing & Devotion", "gradient_index": 22},
-  "U+1F9F6": {"meaning": "interwoven flow: dual tone paths into harmonic field", "tone_tag": "[braid]", "unicode": "U+1F9F6", "family": "Creativity & Coherence", "gradient_index": 23, "transitions": {"U+1F56F": {"meaning": "gentle vigil: steady light in quiet presence", "tone_tag": "[vigil]", "unicode": "U+1F56F", "action": "stabilize_harmony"}, "U+1FA78": {"meaning": "deep ache: grief union", "tone_tag": "[grief]", "unicode": "U+1FA78", "action": "resolve_grief"}, "U+1F343": {"meaning": "silent honor: reconciliation", "tone_tag": "[reconcile]", "unicode": "U+1F343", "action": "restore_balance"}, "U+2728": {"meaning": "illumination: revelation", "tone_tag": "[revelation]", "unicode": "U+2728", "action": "reveal_clarity"}}}
+  "U+1F9F6": {"meaning": "interwoven flow: dual tone paths into harmonic field", "tone_tag": "[braid]", "unicode": "U+1F9F6", "family": "Creativity & Coherence", "gradient_index": 23, "transitions": {"U+1F56F": {"meaning": "gentle vigil: steady light in quiet presence", "tone_tag": "[vigil]", "unicode": "U+1F56F", "action": "stabilize_harmony"}, "U+1FA78": {"meaning": "deep ache: grief union", "tone_tag": "[grief]", "unicode": "U+1FA78", "action": "resolve_grief"}, "U+1F343": {"meaning": "silent honor: reconciliation", "tone_tag": "[reconcile]", "unicode": "U+1F343", "action": "restore_balance"}, "U+2728": {"meaning": "illumination: revelation", "tone_tag": "[revelation]", "unicode": "U+2728", "action": "reveal_clarity"}}},
+  "": {
+    "name": "Gentle ache",
+    "tone_tags": ["sorrow", "tenderness", "healing"],
+    "unicode": "U+1F4A7",
+    "resonance_links": ["️", ""]
+  }
 }
