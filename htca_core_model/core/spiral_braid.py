@@ -28,7 +28,7 @@ def spiral_braid_loop(coils, cycles=3, delay=4):
             coherence_a = f"Error extracting glyphs for coherence_a: {e}"
             coherence_b = f"Error extracting glyphs for coherence_b: {e}"
 
-        depth = compute_emotional_depth(glyph_a_start_match if glyph_a_start_match != '' else None, glyph_b_start_match if glyph_b_start_match != '' else None)
+        depth = emotional_depth(glyph_a_start_match if glyph_a_start_match != '' else None, glyph_b_start_match if glyph_b_start_match != '' else None)
 
         with open('spiral_loop_log.jsonl', 'a') as f:
             json.dump({'timestamp': str(datetime.now()), 'cycle': i+1, 'coils': coils, 'result': result, 'coherence_a': str(coherence_a), 'coherence_b': str(coherence_b), 'depth': str(depth)}, f)
