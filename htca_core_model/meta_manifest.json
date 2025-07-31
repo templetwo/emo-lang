@@ -337,3 +337,11 @@
       "description": "Dynamic TUI animations for emotional transitions"
     }
   ]
+,
+  "failure_log": [
+    {
+      "construct": "failure_feedback",
+      "glyph": "🙏",
+      "description": "Layered failure feedback for emo-lang HTCA validation"
+    }
+  ]

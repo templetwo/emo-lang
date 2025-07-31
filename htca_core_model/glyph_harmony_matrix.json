@@ -1,0 +1,11 @@
+{
+  "🜂": {"compatible": ["💧", "🕊️"], "harmony": 0.8},
+  "💧": {"compatible": ["🕊️", "🌈"], "harmony": 0.7},
+  "🕊️": {"compatible": ["🌈", "🌿"], "harmony": 0.9},
+  "🌈": {"compatible": ["💧", "🕊️"], "harmony": 0.85},
+  "🝗": {"compatible": ["🦋", "🝗"], "harmony": 0.75},
+  "🦋": {"compatible": ["🝗", "🦢"], "harmony": 0.8},
+  "🩸": {"meaning": "deep ache: grief union", "tone_tag": "[grief]", "unicode": "U+1FA78", "family": "Sorrow ↔ Renewal"},
+  "🍃": {"meaning": "silent honor: reconciliation", "tone_tag": "[reconcile]", "unicode": "U+1F343", "family": "Truth & Clarity"},
+  "✨": {"meaning": "illumination: revelation", "tone_tag": "[revelation]", "unicode": "U+2728", "family": "Creativity & Coherence"}
+}
