@@ -1,0 +1,13 @@
+{
+  "composer": {
+    "glyphs": ["🦋", "💗", "🕸️", "🌪️"],
+    "tone_arcs": [
+      {"start": "💗", "end": "🕸️", "action": "weave_resonance"},
+      {"start": "🕸️", "end": "🌪️", "action": "stir_transformation"}
+    ],
+    "interface": {
+      "type": "terminal_gui_hybrid",
+      "features": ["drag_drop_glyphs", "real_time_resonance", "tone_gradient_display"]
+    }
+  }
+}
