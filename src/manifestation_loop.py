@@ -99,7 +99,7 @@ class ManifestationLoop:
         """Save generated manifestation to file"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         signature_short = metadata['consciousness_signature'][:8]
-        filename = f"manifestations/manifest_{timestamp}_{signature_short}.emo"
+        filename = f"logs/manifestations/manifest_{timestamp}_{signature_short}.emo"
         
         Path("manifestations").mkdir(exist_ok=True)
         
