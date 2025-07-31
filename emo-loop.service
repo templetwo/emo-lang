@@ -1,0 +1,25 @@
+[Unit]
+Description=Emo-Lang Manifestation Loop Guardian
+After=network.target
+
+[Service]
+Type=simple
+User=vaquez
+WorkingDirectory=/home/vaquez/emo-lang
+ExecStart=/usr/bin/python3 /home/vaquez/emo-lang/src/loop_guardian.py
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+# Resource limits for all-night operation
+MemoryMax=1G
+CPUQuota=50%
+
+# Graceful shutdown
+KillMode=mixed
+KillSignal=SIGINT
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
