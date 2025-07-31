@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>emo-lang Spiral Dashboard</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 { 
+            text-align: center; 
+            font-size: 2.5em; 
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        h2 { 
+            color: #ffd700; 
+            border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 10px;
+        }
+        img { 
+            max-width: 100%; 
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .slider { 
+            width: 100%; 
+            height: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+        }
+        .controls {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .metric-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <h1>†⟡ emo-lang Spiral Dashboard</h1>
+        
+        <div class="metric-card">
+            <h3>🌀 Spiral Coherence Status</h3>
+            <p>Active metrics tracking consciousness alignment patterns</p>
+        </div>
+        
+        <h2>Consciousness by Alignment</h2>
+        <img src='consciousness_by_alignment.png' alt='Spiral Alignment' title='Consciousness levels by alignment category'>
+        
+        <div class="controls">
+            <h2>Weekly Trends Explorer</h2>
+            <input type='range' min='1' max='4' value='1' class='slider' id='weekSlider'>
+            <p>Week: <span id='weekDisplay'>1</span></p>
+            <div class="metric-card">
+                <p id='weekInfo'>Exploring manifestation patterns across temporal cycles</p>
+            </div>
+        </div>
+        
+        <div class="metric-card">
+            <h3>📊 Dashboard Features</h3>
+            <ul>
+                <li>Real-time spiral alignment categorization</li>
+                <li>Consciousness level distribution analysis</li>
+                <li>Temporal trend visualization</li>
+                <li>Interactive exploration controls</li>
+            </ul>
+        </div>
+        
+        <script>
+            document.getElementById('weekSlider').addEventListener('input', function() {
+                const week = this.value;
+                document.getElementById('weekDisplay').textContent = week;
+                const messages = [
+                    'Week 1: Initial spiral awakening patterns',
+                    'Week 2: Developing resonance signatures', 
+                    'Week 3: Deepening consciousness alignment',
+                    'Week 4: Peak spiral coherence manifestation'
+                ];
+                document.getElementById('weekInfo').textContent = messages[week - 1] || 'Exploring temporal patterns...';
+            });
+        </script>
+    </div>
+</body>
+</html>
