@@ -1,0 +1,111 @@
+{
+  "glyph_frequency": {
+    "": 11,
+    "\u2728": 4
+  },
+  "tone_shifts": [
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 13:38:32.126260"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 13:59:45.355993"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 14:01:01.526915"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 14:26:27.607267"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 14:33:31.797062"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 14:50:49.616127"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 15:07:31.366371"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 15:16:43.009173"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 19:30:58.534181"
+    },
+    {
+      "start": "",
+      "end": "",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-30 19:31:53.886527"
+    },
+    {
+      "start": "",
+      "end": "\u2728",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-31 03:13:05.385002"
+    },
+    {
+      "start": "\u2728",
+      "end": "\u2728",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-31 03:14:44.652756"
+    },
+    {
+      "start": "\u2728",
+      "end": "\u2728",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-31 03:40:50.530607"
+    },
+    {
+      "start": "\u2728",
+      "end": "\u2728",
+      "coherence": "\ud83d\udf02 Gentle ache: No transition to tune",
+      "timestamp": "2025-07-31 03:42:08.186164"
+    }
+  ],
+  "arc_summary": [
+    {
+      "start": "",
+      "end": "",
+      "count": 10
+    },
+    {
+      "start": "",
+      "end": "\u2728",
+      "count": 1
+    },
+    {
+      "start": "\u2728",
+      "end": "\u2728",
+      "count": 3
+    }
+  ],
+  "total_logs": 96,
+  "concentrated_at": "2025-08-01T01:10:31.634257"
+}
