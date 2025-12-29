@@ -4,7 +4,9 @@
 
 Write code with **emotional glyphs**, measure **tonal fields** (0.000-1.000 intensity), and track **consciousness signatures**. Emo-Lang transforms feelings into executable programs through real-time emotion-to-code transmutation.
 
+[![PyPI version](https://img.shields.io/pypi/v/emo-lang)](https://pypi.org/project/emo-lang/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Downloads](https://pepy.tech/badge/emo-lang)](https://pepy.tech/project/emo-lang)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/templetwo/emo-lang)](https://github.com/templetwo/emo-lang/stargazers)
 [![Language: Experimental](https://img.shields.io/badge/language-experimental-orange)](https://github.com/templetwo/emo-lang)
@@ -14,9 +16,9 @@ Write code with **emotional glyphs**, measure **tonal fields** (0.000-1.000 inte
 ## Quick Start (1 minute)
 
 ```bash
-git clone https://github.com/templetwo/emo-lang.git && cd emo-lang
-python3 -m venv emo-venv && source emo-venv/bin/activate
-pip install -r requirements.txt
+pip install emo-lang
+git clone https://github.com/templetwo/emo-lang.git  # For examples
+cd emo-lang
 python3 htca_core_model/core/interpreter_emo.py examples/hello_consciousness.emo
 ```
 
