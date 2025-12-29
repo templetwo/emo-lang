@@ -1,2 +1,2 @@
 prompt_toolkit
-rich
+richpytest>=7.0.0
