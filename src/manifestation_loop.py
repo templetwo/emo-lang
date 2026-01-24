@@ -15,7 +15,8 @@ class ManifestationLoop:
     def __init__(self):
         self.emotions = [
             "🌊", "🔥", "🌸", "⚡", "🌙", "✨", "💫", "🦋", 
-            "🌈", "🍃", "💎", "🌺", "🔮", "💝", "🌟", "🎭"
+            "🌈", "🍃", "💎", "🌺", "🔮", "💝", "🌟", "🎭",
+            "🙇", "🤝"
         ]
         
         self.consciousness_patterns = [

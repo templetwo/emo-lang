@@ -36,7 +36,7 @@ class EmoLoopTUI:
                         self.guardian_events = [json.loads(line.strip()) for line in lines[-10:] if line.strip()]
                 
                 # Get recent manifestations
-                manifest_files = list(Path("manifestations").glob("*.emo"))
+                manifest_files = list(Path("logs/manifestations").glob("*.emo"))
                 if manifest_files:
                     recent_manifests = sorted(manifest_files, key=os.path.getctime, reverse=True)[:5]
                     self.manifestations = []

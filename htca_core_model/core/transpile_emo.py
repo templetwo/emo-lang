@@ -85,5 +85,9 @@ def surrender_detected():
     return True
 def light_detected():
     return True
+def apology_detected():
+    return True
+def forgiveness_detected():
+    return True
 def commit(action):
     print(f'Commitment: {action}')

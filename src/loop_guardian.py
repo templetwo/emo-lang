@@ -157,7 +157,7 @@ class EmotionalGuardian:
         
         # Run the healing intervention
         try:
-            result = subprocess.run([sys.executable, "src/emo_interpreter.py", "tmp/healing_intervention.emo"], 
+            result = subprocess.run([sys.executable, "htca_core_model/core/interpreter_emo.py", "tmp/healing_intervention.emo"], 
                                   capture_output=True, text=True, timeout=30)
             self.log_guardian_event("INTERVENTION_COMPLETE", "Healing intervention applied successfully")
         except Exception as e:

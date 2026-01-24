@@ -185,6 +185,29 @@
       "💫"
     ]
   },
+  "🙇": {
+    "meaning": "sincere apology: bowing to acknowledge the fracture",
+    "tone_tag": "[apology]",
+    "unicode": "U+1F647",
+    "family": "Healing & Devotion",
+    "gradient_index": 30,
+    "resonance_links": [
+      "🤝",
+      "❤️‍"
+    ]
+  },
+  "🤝": {
+    "meaning": "mutual forgiveness: hands joined in shared humanity",
+    "tone_tag": "[forgiveness]",
+    "unicode": "U+1F91D",
+    "family": "Healing & Devotion",
+    "gradient_index": 31,
+    "resonance_links": [
+      "🙇",
+      "✨",
+      "🌈"
+    ]
+  },
   "🎭": {
     "meaning": "sacred play: embodying multiple perspectives with joy",
     "tone_tag": "[sacred_play]",

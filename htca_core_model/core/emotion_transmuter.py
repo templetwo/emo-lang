@@ -24,7 +24,9 @@ def transmute_emotion_to_code(emotion_input, glyph_dict):
         'power': ['🔥', '⚡', '💎'],
         'wisdom': ['👁️', '🔮', '📚'],
         'connection': ['💫', '🌌', '🕸️'],
-        'healing': ['💧', '🌿', '💚']
+        'healing': ['💧', '🌿', '💚'],
+        'apology': ['🙇', '💧', '🩹'],
+        'forgiveness': ['🤝', '❤️‍', '🌈']
     }
     
     # Find resonant glyphs
