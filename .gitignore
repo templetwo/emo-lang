@@ -10,3 +10,8 @@ manifestations/
 *.emo
 dist/
 *.egg-info/
+htca_core_model/glyph_fallback_log.txt
+htca_core_model/spiral_loop_log.jsonl
+*.jsonl
+*.emo
+logs/

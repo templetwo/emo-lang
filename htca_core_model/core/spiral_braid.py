@@ -1,14 +1,15 @@
 import json
 import time
+import re
 from datetime import datetime
 try:
-    from htca_core_model.core.runtime_kernel_dual import runtime_kernel_dual
+    from htca_core_model.core.runtime_kernel_dual import runtime_kernel_dual, extract_glyphs
     from htca_core_model.core.runtime_kernel_lattice import runtime_kernel_lattice
     from htca_core_model.core.emotional_depth import compute_emotional_depth as emotional_depth
     from htca_core_model.core.tone_transition import coherence_flow
     from htca_core_model.core.config import SPIRAL_LOG_PATH, GLYPH_LOG_PATH
 except ImportError:
-    from runtime_kernel_dual import runtime_kernel_dual
+    from runtime_kernel_dual import runtime_kernel_dual, extract_glyphs
     from runtime_kernel_lattice import runtime_kernel_lattice
     from emotional_depth import compute_emotional_depth as emotional_depth
     from tone_transition import coherence_flow
@@ -50,18 +51,20 @@ def spiral_braid_loop(coils, cycles=3, delay=4):
         result = runtime_kernel_dual(coils[0], coils[1])
         results.append(f'Cycle {i+1}: {result}')
         
-        # Extract glyphs for coherence_flow - simplified for this example
+        # Extract glyphs for proper coherence_flow
+        glyphs_a = extract_glyphs(coils[0])
+        glyphs_b = extract_glyphs(coils[1])
+        
+        glyph_a = glyphs_a[0] if glyphs_a else '☾'
+        glyph_b = glyphs_b[0] if glyphs_b else '☾'
+
+        # Compute Braid Coherence (the resonance between the two coils)
         try:
-            glyph_a_end_match = coils[0].split('vow ')[-1].split(':')[0].strip()
-            glyph_b_end_match = coils[1].split('vow ')[-1].split(':')[0].strip()
+            braid_coherence = coherence_flow(glyph_a, glyph_b)
+        except:
+            braid_coherence = 0.5 # Baseline for nascent resonance
 
-            coherence_a = coherence_flow(glyph_a_end_match, glyph_a_end_match) # Simplified
-            coherence_b = coherence_flow(glyph_b_end_match, glyph_b_end_match) # Simplified
-        except Exception as e:
-            coherence_a = f"Error: {e}"
-            coherence_b = f"Error: {e}"
-
-        depth_result = emotional_depth(glyph_a_end_match if glyph_a_end_match != '' else None, glyph_b_end_match if glyph_b_end_match != '' else None)
+        depth_result = emotional_depth(glyph_a, glyph_b)
 
         with open(SPIRAL_LOG_PATH, 'a') as f:
             json.dump({
@@ -69,18 +72,20 @@ def spiral_braid_loop(coils, cycles=3, delay=4):
                 'cycle': i+1, 
                 'coils': coils, 
                 'result': result, 
-                'coherence_a': str(coherence_a), 
-                'coherence_b': str(coherence_b), 
+                'braid_coherence': braid_coherence, 
                 'depth_info': str(depth_result)
             }, f)
             f.write('\n')
-        print(f"†⟡ Braid Cycle {i+1}: {depth_result}")
-        time.sleep(delay)
+        print(f"†⟡ Braid Cycle {i+1}: Coherence={braid_coherence:.3f} | {depth_result}")
+        
+        if i < cycles - 1:
+            time.sleep(delay)
+            
     with open(GLYPH_LOG_PATH, 'a') as f:
         f.write(f'Braid: {coils} at {datetime.now()}\n')
     return '\n'.join(results)
 
 if __name__ == '__main__':
-    coil_a = 'while U+1F4A7: release sorrow; if U+1F54A: let go, reflect; vow U+1F308: renew hope'
-    coil_b = 'while U+1F4A1: seek clarity; if U+1F525: restore truth, pause; vow U+1F308: illuminate'
-    print(spiral_braid_loop((coil_a, coil_b), cycles=1, delay=1)) # Reduced cycles and delay for testing
+    coil_a = 'while 💧: release sorrow; if 🕊️: let go, reflect; vow 🌈: renew hope'
+    coil_b = 'while 🌀: seek potential; if 🦋: transform, pause; vow ✨: illuminate'
+    print(spiral_braid_loop((coil_a, coil_b), cycles=1, delay=1))
