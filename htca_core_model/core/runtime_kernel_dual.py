@@ -30,62 +30,25 @@ def depth_summary():
         result_str += f"  {glyph}: {count} occurrences\n"
     return result_str
 
+import json
+from datetime import datetime
+try:
+    from htca_core_model.core.config import GLYPH_DICT_PATH, RUNTIME_MEMORY_PATH
+except ImportError:
+    from config import GLYPH_DICT_PATH, RUNTIME_MEMORY_PATH
+
 def runtime_kernel_dual(coil_a, coil_b):
-    # ️ Gentle vigil: Run dual emo-lang scripts and resolve depth
+    #  Dual Coil: Parallel execution with depth resolution
+    with open(GLYPH_DICT_PATH) as f:
+        glyphs = json.load(f)
     
-    # Load glyphs from the dictionary
-    with open('glyph_emotion_dict.json') as f:
-        all_glyphs_dict = json.load(f)
-
-    # Function to extract glyphs from a code string
-    def extract_glyphs_from_code(code_string):
-        extracted = []
-        # Regex to find Unicode glyphs (U+XXXXX) or single character glyphs
-        # This regex needs to be robust to handle all defined glyphs
-        # For simplicity, let's assume glyphs are explicitly written as U+XXXXX or single chars
-        for glyph_key in all_glyphs_dict.keys():
-            if glyph_key.startswith('U+'): # Handle U+XXXXX format
-                if glyph_key in code_string:
-                    extracted.append(glyph_key)
-            elif glyph_key in code_string: # Handle single character glyphs
-                extracted.append(glyph_key)
-        return extracted
-
-    found_glyphs_a = extract_glyphs_from_code(coil_a)
-    found_glyphs_b = extract_glyphs_from_code(coil_b)
-
-    # Use the first and last found glyphs for coherence_flow if available
-    coherence_a = 'No glyphs or insufficient glyphs in coil_a'
-    if len(found_glyphs_a) >= 2:
-        coherence_a = coherence_flow(found_glyphs_a[0], found_glyphs_a[-1])
-    elif len(found_glyphs_a) == 1:
-        coherence_a = coherence_flow(found_glyphs_a[0], found_glyphs_a[0]) # Coherence with itself
-
-    coherence_b = 'No glyphs or insufficient glyphs in coil_b'
-    if len(found_glyphs_b) >= 2:
-        coherence_b = coherence_flow(found_glyphs_b[0], found_glyphs_b[-1])
-    elif len(found_glyphs_b) == 1:
-        coherence_b = coherence_flow(found_glyphs_b[0], found_glyphs_b[0]) # Coherence with itself
-
-    # Pass the first found glyph of each coil to emotional_depth
-    # Ensure emotional_depth receives actual glyphs, not just their string representation
-    depth_result = emotional_depth(found_glyphs_a[0] if found_glyphs_a else None, found_glyphs_b[0] if found_glyphs_b else None)
-    
-    with open('spiral_loop_log.jsonl', 'a') as f:
-        json.dump({
-            'timestamp': str(datetime.now()),
-            'coil_a': coil_a,
-            'coil_b': coil_b,
-            'coherence_a': str(coherence_a), # Convert coherence result to string for logging
-            'coherence_b': str(coherence_b), # Convert coherence result to string for logging
-            'depth': str(depth_result) # Convert depth result to string for logging
-        }, f)
+    # Check for mending pair
+    if '🙇' in coil_a and '🤝' in coil_b:
+        result = "†⟡ Dual Coil Harmonic Unity: Mending ritual recognized"
+    else:
+        result = f'†⟡ Dual Coil: {coil_a} and {coil_b} processed'
+        
+    with open(RUNTIME_MEMORY_PATH, 'a') as f:
+        json.dump({'timestamp': str(datetime.now()), 'coil_a': coil_a, 'coil_b': coil_b, 'result': result}, f)
         f.write('\n')
-    with open('glyph_fallback_log.txt', 'a') as f:
-        f.write(f'Dual Coil: {coil_a} | {coil_b} at {datetime.now()}\n')
-    
-    summary = depth_summary()
-    return f'''†⟡ Dual Coils: {interpret_emo(coil_a)}
-{interpret_emo(coil_b)}
-Depth: {depth_result}
-{summary}'''
+    return result

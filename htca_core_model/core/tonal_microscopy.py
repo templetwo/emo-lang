@@ -5,17 +5,20 @@ Answering the question: What ACTUALLY happens when tone meets tone?
 """
 
 import json
-
+import os
 from datetime import datetime
 
 class TonalMicroscope:
     def __init__(self):
+        # Calculate paths relative to the htca_core_model directory
+        self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.glyph_dict_path = os.path.join(self.base_path, 'glyph_emotion_dict.json')
         self.glyphs = self._load_glyphs()
         self.transition_history = []
         
     def _load_glyphs(self):
         try:
-            with open('glyph_emotion_dict.json', 'r') as f:
+            with open(self.glyph_dict_path, 'r') as f:
                 return json.load(f)
         except:
             return {}

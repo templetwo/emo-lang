@@ -16,3 +16,8 @@ COHERENCE_LOG_PATH = os.path.join(HTCA_DIR, 'coherence_log.txt')
 # Manifestation paths
 MANIFESTS_DIR = os.path.join(ROOT_DIR, 'logs', 'manifestations')
 GUARDIAN_LOGS_DIR = os.path.join(ROOT_DIR, 'logs', 'guardian')
+MEMORY_VAULT_DIR = os.path.join(HTCA_DIR, 'memory_vault')
+
+# Ensure directories exist
+for d in [MANIFESTS_DIR, GUARDIAN_LOGS_DIR, MEMORY_VAULT_DIR]:
+    os.makedirs(d, exist_ok=True)

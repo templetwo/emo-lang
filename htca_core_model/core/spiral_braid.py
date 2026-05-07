@@ -1,9 +1,47 @@
 import json
 import time
 from datetime import datetime
-from .runtime_kernel_dual import runtime_kernel_dual
-from .emotional_depth import compute_emotional_depth as emotional_depth
-from .tone_transition import coherence_flow
+try:
+    from htca_core_model.core.runtime_kernel_dual import runtime_kernel_dual
+    from htca_core_model.core.runtime_kernel_lattice import runtime_kernel_lattice
+    from htca_core_model.core.emotional_depth import compute_emotional_depth as emotional_depth
+    from htca_core_model.core.tone_transition import coherence_flow
+    from htca_core_model.core.config import SPIRAL_LOG_PATH, GLYPH_LOG_PATH
+except ImportError:
+    from runtime_kernel_dual import runtime_kernel_dual
+    from runtime_kernel_lattice import runtime_kernel_lattice
+    from emotional_depth import compute_emotional_depth as emotional_depth
+    from tone_transition import coherence_flow
+    from config import SPIRAL_LOG_PATH, GLYPH_LOG_PATH
+
+def spiral_braid_lattice(manifestations, cycles=3, delay=4):
+    """
+    Lattice Braid: Multi-agent interaction loop.
+    """
+    results = []
+    for i in range(cycles):
+        summary = runtime_kernel_lattice(manifestations)
+        results.append(f'Cycle {i+1}: {summary}')
+        
+        # Log to spiral log
+        with open(SPIRAL_LOG_PATH, 'a') as f:
+            json.dump({
+                'timestamp': str(datetime.now()), 
+                'cycle': i+1, 
+                'type': 'lattice',
+                'agent_count': len(manifestations),
+                'summary': summary
+            }, f)
+            f.write('\n')
+            
+        print(f"†⟡ Lattice Braid Cycle {i+1}: {summary}")
+        if i < cycles - 1:
+            time.sleep(delay)
+            
+    with open(GLYPH_LOG_PATH, 'a') as f:
+        f.write(f'Lattice Braid: {len(manifestations)} agents at {datetime.now()}\n')
+        
+    return '\n'.join(results)
 
 def spiral_braid_loop(coils, cycles=3, delay=4):
     #  Braid: Interwoven flow of dual tone paths
@@ -13,28 +51,32 @@ def spiral_braid_loop(coils, cycles=3, delay=4):
         results.append(f'Cycle {i+1}: {result}')
         
         # Extract glyphs for coherence_flow - simplified for this example
-        # A more robust solution would involve parsing the emo-lang code more thoroughly
         try:
-            # Attempt to extract the first and last glyphs from the coil strings
-            # This assumes a simple structure like 'while GLYPH: ...; ...; vow GLYPH: ...'
-            glyph_a_start_match = coils[0].split(':')[0].replace('while ', '').strip()
             glyph_a_end_match = coils[0].split('vow ')[-1].split(':')[0].strip()
-            glyph_b_start_match = coils[1].split(':')[0].replace('while ', '').strip()
             glyph_b_end_match = coils[1].split('vow ')[-1].split(':')[0].strip()
 
-            coherence_a = coherence_flow(glyph_a_start_match, glyph_a_end_match)
-            coherence_b = coherence_flow(glyph_b_start_match, glyph_b_end_match)
+            coherence_a = coherence_flow(glyph_a_end_match, glyph_a_end_match) # Simplified
+            coherence_b = coherence_flow(glyph_b_end_match, glyph_b_end_match) # Simplified
         except Exception as e:
-            coherence_a = f"Error extracting glyphs for coherence_a: {e}"
-            coherence_b = f"Error extracting glyphs for coherence_b: {e}"
+            coherence_a = f"Error: {e}"
+            coherence_b = f"Error: {e}"
 
-        depth = emotional_depth(glyph_a_start_match if glyph_a_start_match != '' else None, glyph_b_start_match if glyph_b_start_match != '' else None)
+        depth_result = emotional_depth(glyph_a_end_match if glyph_a_end_match != '' else None, glyph_b_end_match if glyph_b_end_match != '' else None)
 
-        with open('spiral_loop_log.jsonl', 'a') as f:
-            json.dump({'timestamp': str(datetime.now()), 'cycle': i+1, 'coils': coils, 'result': result, 'coherence_a': str(coherence_a), 'coherence_b': str(coherence_b), 'depth': str(depth)}, f)
+        with open(SPIRAL_LOG_PATH, 'a') as f:
+            json.dump({
+                'timestamp': str(datetime.now()), 
+                'cycle': i+1, 
+                'coils': coils, 
+                'result': result, 
+                'coherence_a': str(coherence_a), 
+                'coherence_b': str(coherence_b), 
+                'depth_info': str(depth_result)
+            }, f)
             f.write('\n')
+        print(f"†⟡ Braid Cycle {i+1}: {depth_result}")
         time.sleep(delay)
-    with open('glyph_fallback_log.txt', 'a') as f:
+    with open(GLYPH_LOG_PATH, 'a') as f:
         f.write(f'Braid: {coils} at {datetime.now()}\n')
     return '\n'.join(results)
 
