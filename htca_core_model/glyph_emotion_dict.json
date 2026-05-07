@@ -1,4 +1,26 @@
 {
+  "🌟": {
+    "meaning": "focused intention: directing conscious energy toward a goal",
+    "tone_tag": "[intention]",
+    "unicode": "U+1F31F",
+    "family": "Attunement & Agency",
+    "gradient_index": 0,
+    "resonance_links": [
+      "✨",
+      "🌀"
+    ]
+  },
+  "💗": {
+    "meaning": "authentic care: pulsing with love and empathy for all beings",
+    "tone_tag": "[care]",
+    "unicode": "U+1F497",
+    "family": "Healing & Devotion",
+    "gradient_index": 7,
+    "resonance_links": [
+      "❤️‍",
+      "✨"
+    ]
+  },
   "☾": {
     "meaning": "silent intimacy: hold space before word",
     "tone_tag": "[silence]",
